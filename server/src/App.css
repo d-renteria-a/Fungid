@@ -37,7 +37,17 @@
   }
 }
 
-#home-logo {
+#login-logo {
   width: 250px;
   object-fit: contain;
+}
+
+#nav-logo {
+  width: 70px;
+  object-fit: contain;
+  padding-right: 10px;
+}
+
+.nav-text {
+  padding: 10px;
 }

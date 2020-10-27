@@ -35,7 +35,7 @@ class Login extends Component {
         <Col md="auto" className="col">
           <h2 style= {{textAlign: "center"}}>FungId</h2>
 
-          <img id= 'home-logo' src={logo} alt="Logo" />
+          <img id='login-logo' src={logo} alt="Logo" />
         <h3 style= {{textAlign: "center"}}>Login</h3>
         <InputGroup className="mb-3" onKeyUp={this.submitLogin} name="login-form"><FormControl placeholder="Username"></FormControl></InputGroup>
         <Button variant="outline-dark" onClick={() => this.history.push('/')} className="float-right">Login</Button>
