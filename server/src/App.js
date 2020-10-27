@@ -18,7 +18,13 @@ export default class App extends Component {
 
     const formData = new FormData()
 
+    const types = ['image/png', 'image/jpeg', 'image/gif']
+
     files.forEach((file, i) => {
+      if (types.every(type => file.type !== type)) {
+        return (`'${file.type}' is not a supported format`)
+      }
+      
       formData.append(i, file)
     })
 
