@@ -14,17 +14,17 @@ let pool;
 
 if (process.env.NODE_ENV === 'production') {
   console.log("in production!")
-   pool = mysql.createPool(process.env.CLEARDB_DATABASE_URL);
+  pool = mysql.createPool(process.env.CLEARDB_DATABASE_URL);
 } else {
-      pool = mysql.createPool(
-     {
-     connectionLimit : 10,
-     host            : 'localhost',
-     user            : 'root',
-     password        : 'D46123Daniel',
-     database        : 'fungid_final_project'
-   });
-   console.log("end of pool")
+    pool = mysql.createPool(
+    {
+    connectionLimit : 10,
+    host            : 'localhost',
+    user            : 'root',
+    password        : 'D46123Daniel',
+    database        : 'fungid_final_project'
+  });
+  console.log("dev")
 }
 
 cloudinary.config({ 

@@ -51,3 +51,16 @@
 .nav-text {
   padding: 10px;
 }
+
+/* #map {
+  height: 200px;
+  width: 33%;
+} */
+
+#home {
+  width: 100%;
+}
+
+#root {
+  max-width: 90%;
+}
