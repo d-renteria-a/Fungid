@@ -9,10 +9,7 @@ class Sidebar extends Component {
                         <span>Browse Identified Fungi:</span>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">By State</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">By Name</a>
+                        <p>By Name</p>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">By Genus</a>

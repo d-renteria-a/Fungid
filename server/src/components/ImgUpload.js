@@ -53,7 +53,11 @@ class ImgUpload extends Component {
             case uploading:
               return <Spinner />
             case images.length > 0:
-              return <Images images={images} removeImage={this.removeImage} />
+                return (
+                    <div>
+                        <Images images={images} removeImage={this.removeImage} />
+                    </div>
+                )
             default:
               return <Buttons onChange={this.onChange} />
           }

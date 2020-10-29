@@ -4,6 +4,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
+const imgStyles = {
+  maxWidth: '50px'
+}
 export default props => 
   props.images.map((image, i) =>
     <div key={i} className='fadein'>
@@ -13,6 +16,6 @@ export default props =>
       >
         <FontAwesomeIcon icon={faTimesCircle} size='2x' />
       </div>
-      <img src={image.secure_url} alt='' />
+      <img src={image.secure_url} alt='' style={imgStyles} />
     </div>
   )

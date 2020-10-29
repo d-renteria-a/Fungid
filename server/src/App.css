@@ -52,10 +52,29 @@
   padding: 10px;
 }
 
-/* #map {
-  height: 200px;
-  width: 33%;
+.map-container {
+  margin-top: 100px;
+}
+
+.form-container {
+  margin-top: 100px;
+}
+
+/* .home-container {
+  height: 100%;
 } */
+
+.sidebar {
+  position: absolute;
+  display: inline-block;
+}
+
+.list-container {
+  /* display: inline-block; */
+  margin-top: 70px;
+  width: 100%;
+  padding-left: 0;
+}
 
 #home {
   width: 100%;
@@ -63,4 +82,9 @@
 
 #root {
   max-width: 90%;
+  position: absolute;
+}
+
+html, body, #root, #home, .home-container, .sidebar {
+  height: 100%;
 }
