@@ -5,7 +5,7 @@ class ListContainer extends Component {
     render() {
         return (
             <div>
-                {/* <h4>Recently Found Fungi:</h4> */}
+                <h4>Recently Found Fungi:</h4>
                 <EntryList />
             </div>
         )

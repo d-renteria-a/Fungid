@@ -36,6 +36,8 @@ router.get('/users', (request, response, next) => {
   });
 })
 
+
+
 //endpoint for users logging in. Adds user to DB, returns newUser 
 router.post('/login', (request, response, next) => {
     //Create a new user and add them to database
@@ -56,6 +58,94 @@ router.post('/login', (request, response, next) => {
 
 router.get('/data_entries', (req, res, next) => {
     pool.query('select * from data_entries', function (error, results, fields) {
+        if (error) throw error;
+        res.send(results)
+    })
+})
+
+router.get('/data_entries/:filter/name', (req, res, next) => {
+    let {filter} = req.params
+    console.log(filter)
+
+    switch(filter) {
+        case 'A-E':
+        pool.query("select * from data_entries WHERE name < 'E'", function (error, results, fields) {
+            if (error) throw error;
+            res.send(results)
+        })
+        break;
+
+        case 'F-K':
+        pool.query("SELECT * from data_entries WHERE name BETWEEN 'F' and 'K'", function (error, results,fields) {
+            if (error) throw error;
+            res.send(results)
+        })
+        break;
+
+        case 'L-Q':
+            pool.query("SELECT * from data_entries WHERE name BETWEEN 'L' and 'Q'", function (error, results,fields) {
+                if (error) throw error;
+                res.send(results)
+            })
+        break;
+
+        case 'R-Z':
+            pool.query("SELECT * from data_entries WHERE name BETWEEN 'R' and 'Z'", function (error, results,fields) {
+                if (error) throw error;
+                res.send(results)
+            })
+        break;
+
+        default:
+            return "No filter assigned"
+    }
+    
+})
+
+router.get('/data_entries/:filter/scientific_name', (req, res, next) => {
+    let {filter} = req.params
+    console.log(filter)
+
+    switch(filter) {
+        case 'A-E':
+        pool.query("select * from data_entries WHERE scientific_name < 'E'", function (error, results, fields) {
+            if (error) throw error;
+            res.send(results)
+        })
+        break;
+
+        case 'F-K':
+        pool.query("SELECT * from data_entries WHERE scientific_name BETWEEN 'F' and 'K'", function (error, results,fields) {
+            if (error) throw error;
+            res.send(results)
+        })
+        break;
+
+        case 'L-Q':
+            pool.query("SELECT * from data_entries WHERE scientific_name BETWEEN 'L' and 'Q'", function (error, results,fields) {
+                if (error) throw error;
+                res.send(results)
+            })
+        break;
+
+        case 'R-Z':
+            pool.query("SELECT * from data_entries WHERE scientific_name BETWEEN 'R' and 'Z'", function (error, results,fields) {
+                if (error) throw error;
+                res.send(results)
+            })
+        break;
+
+        default:
+            return "No filter assigned"
+    }
+    
+})
+
+router.get('/data_entries/:filter/genus', (req, res, next) => {
+    let {filter} = req.params
+    console.log(filter)
+
+    pool.query(`SELECT * from data_entries WHERE scientific_name LIKE {filter}`, function (error, results, fields) {
         if (error) throw error;
         res.send(results)
     })

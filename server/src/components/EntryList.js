@@ -5,57 +5,60 @@ import { fetchEntries } from '../actions'
 import { ListGroup } from 'react-bootstrap'
 
 class EntryList extends Component {
-    componentDidMount() {
-        // let currentState = this.props.state
-        console.log('Component Mounts')
-
-        console.log('entries in state')
-        
-    }
-    
     renderEntries() {
         // console.log('props are', this.props);
         let allEntries;
-        if(!this.props.state.FetchedEntries.length){
-            this.props.fetchEntries()
+        let returnedEntries;
+
+        let count = 0;
+        const Counter = () => {
+            count++
+            console.log(count)
         }
 
-        ////This needs to run asynchronously
-            allEntries = this.props.state.FetchedEntries[0].map(entry => {
-                let edibility = entry.edibility;
-                if(edibility) {
-                    edibility = "Edible";
-                } else {
-                    edibility = "Not Edible/Poisonous";
-                }
-    
-                return (
-                    <ListGroup.Item className='entry-list'>
-                        <div>
-                            {entry.name}: ({entry.scientific_name})
-                            <br></br>
-                            Description: {entry.description}
-                            <br></br>
-                            Edibility: {edibility}
-                            <br></br>
-                            More Information: {entry.wikipedia_url}
-                        </div>
-                    </ListGroup.Item>
-                )
-            })
+        if(!this.props.state.FetchedEntries.length){
+            this.props.fetchEntries()
+            returnedEntries = this.props.state.FetchedEntries;
+        } else {
+            returnedEntries =this.props.state.FetchedEntries[0];
+        }
+      
+        allEntries = returnedEntries.map(entry => {
+            
+            let edibility = entry.edibility;
+            if(edibility) {
+                edibility = "Edible";
+            } else {
+                edibility = "Not Edible/Poisonous";
+            }
+
+            return (
+                <ListGroup.Item className='entry-list'>
+                    <div key={"ListGroup" + count}>
+                        {entry.name}: ({entry.scientific_name})
+                        <br></br>
+                        Description: {entry.description}
+                        <br></br>
+                        Edibility: {edibility}
+                        <br></br>
+                        More Information: {entry.wikipedia_url}
+                    </div>
+                    {Counter()}
+                </ListGroup.Item>
+            )
+        })
        
         console.log(this.props.state.FetchedEntries)
         return allEntries;
     }
     
     render() {
-       
         return (
-                <div className="entry-list" style={{ background: 'snow', height: '90%' }}>
-                    <ListGroup>
-                        {this.renderEntries()}
-                    </ListGroup>
-                </div>
+            <div className="entry-list" style={{ background: 'snow', height: '90%' }}>
+                <ListGroup>
+                    {this.renderEntries()}
+                </ListGroup>
+            </div>
            
         )
     }

@@ -7,9 +7,6 @@ const routes = require('./routes')
 const cloudinary = require('cloudinary')
 const formData = require('express-form-data')
 const cors = require('cors')
-// const { CLIENT_ORIGIN } = require('./config')
-// const router = express.Router();
-const mysql = require('mysql')
 const app = express()
 
 app.use(cors({ 
