@@ -28,7 +28,7 @@ class App extends Component {
             <FormSubmit />
           </div>
           <div className="map-container" style={{display: 'inline-block'}}>
-            {/* <MapContainer /> */}
+            <MapContainer />
           </div>
         </div>
         <div className="col-2">

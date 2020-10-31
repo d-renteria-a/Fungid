@@ -13,7 +13,6 @@ class EntryList extends Component {
         let count = 0;
         const Counter = () => {
             count++
-            console.log(count)
         }
 
         if(!this.props.state.FetchedEntries.length){
@@ -47,8 +46,6 @@ class EntryList extends Component {
                 </ListGroup.Item>
             )
         })
-       
-        console.log(this.props.state.FetchedEntries)
         return allEntries;
     }
     

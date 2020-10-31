@@ -7,6 +7,11 @@ const rootReducer = combineReducers({
     // loggedInUser: UserReducer,
     // onlineUsers: FetchUsers,
     FetchedEntries: FetchEntries
+    //filters: {
+    //     name: [],
+    //     sci name: [],
+    //     season: []
+    // }
 });
 
 export default rootReducer;

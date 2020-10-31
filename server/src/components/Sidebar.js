@@ -20,7 +20,7 @@ class Sidebar extends Component {
                     <li className="nav-item">
                         <div className="nav-link">By Genus:</div>
                         {SidebarList(['Agaricus', 'Amanita', 'Boletus',
-                         'Cortinarius', 'Entoloma', 'Hygrocybe', 'Lactarius',
+                         'Cortinarius', 'Entoloma', 'Hygrocybe', 'Hericium', 'Lactarius', 'Laetiporus',
                          'Russula','Suillus'
                         ])}
                     </li>

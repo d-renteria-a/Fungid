@@ -57,6 +57,8 @@ router.post('/login', (request, response, next) => {
 })
 
 router.get('/data_entries', (req, res, next) => {
+    // let filter = req.query.filter
+
     pool.query('select * from data_entries', function (error, results, fields) {
         if (error) throw error;
         res.send(results)
@@ -145,7 +147,7 @@ router.get('/data_entries/:filter/genus', (req, res, next) => {
     let {filter} = req.params
     console.log(filter)
 
-    pool.query(`SELECT * from data_entries WHERE scientific_name LIKE {filter}`, function (error, results, fields) {
+    pool.query(`SELECT * FROM data_entries WHERE scientific_name LIKE '%${filter}%'`, function (error, results, fields) {
         if (error) throw error;
         res.send(results)
     })

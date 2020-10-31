@@ -16,8 +16,6 @@ const SidebarList = (array) => {
                 <div className="custom-control custom-checkbox" key={"uniqueId" + count}>
                     <input type="checkbox" className="custom-control-input" id={"item" + count}></input>
                     <label className="custom-control-label" htmlFor={"item" + count}>{elem}</label>
-                    <div className="hidden">
-                    </div>
                     {Counter()}
                 </div>
             )
