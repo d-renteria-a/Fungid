@@ -19,7 +19,7 @@ class EntryList extends Component {
             this.props.fetchEntries()
             returnedEntries = this.props.state.FetchedEntries;
         } else {
-            returnedEntries =this.props.state.FetchedEntries[0];
+            returnedEntries = this.props.state.FetchedEntries[0];
         }
       
         allEntries = returnedEntries.map(entry => {
