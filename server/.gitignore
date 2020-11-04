@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
-package.json
 package-lock.json
 node_modules
 tensorflow.py
